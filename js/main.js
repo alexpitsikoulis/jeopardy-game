@@ -5,6 +5,7 @@ const player = {
 }
 //event listener on start button that saves player name hides welcome screen and shows game board
 $('#start-button').on('click', function() {
-    $('.welcome-screen').fadeOut(100)
     player.name = $('#player-name-input').val()
+    $('.welcome-screen').fadeOut(100)
+    $('.roundOneGameBoard').fadeIn(100)
 })
