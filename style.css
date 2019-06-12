@@ -1,3 +1,19 @@
 body {
-    background: red;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
 }
+header {
+    height: 10vh;
+    background: #FA1D88;
+}
+footer {
+    height: 10vh;
+    text-align: left;
+    background: #573AFA;
+}
+    footer p {
+        margin:  3vh 0 3vh 5vw;
+    }
