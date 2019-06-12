@@ -56,7 +56,6 @@ h3 {
     display: none;
 }
 .round-one-game-board-live {
-    background: black;
     padding: .2vw;
     margin: 0 auto;
     height: 75vh;
@@ -80,4 +79,5 @@ h3 {
     }
     .round-one-game-board-live .final {
         grid-column: 1 / span 5;
+        z-index: -1;
     }

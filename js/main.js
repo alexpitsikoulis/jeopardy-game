@@ -302,3 +302,6 @@ $('#start-button').on('click', function() {
         alert('Please enter your name')
     }
 })
+$('.game-board div.question').on('click', function() {
+    alert('clicked')
+})
