@@ -9,5 +9,6 @@ $('#start-button').on('click', function() {
     $('#player-name-display').html(player.name)
     $('#player-score-display').html(player.score)
     $('.welcome-screen').fadeOut(100)
-    $('.roundOneGameBoard').fadeIn(100)
+    $('.roundOneGameBoard').addClass('roundOneGameBoardLive').removeClass('roundOneGameBoard')
+
 })
