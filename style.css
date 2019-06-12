@@ -68,7 +68,15 @@ h3 {
     .round-one-game-board-live div {
         border: solid 1px red;
         margin: .1vw;
-        background: wheat;
+        background: radial-gradient(blue, blue, black);
+        color: white;
+    }
+        .round-one-game-board-live p {
+            margin: 15% auto;
+        }
+    .round-one-game-board-live .category {
+        color: black;
+        background: white;
     }
     .round-one-game-board-live .final {
         grid-column: 1 / span 5;
