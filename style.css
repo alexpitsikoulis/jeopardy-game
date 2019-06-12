@@ -17,3 +17,6 @@ footer {
     footer p {
         margin:  3vh 0 3vh 5vw;
     }
+.welcome-screen {
+    height: 80vh;
+}

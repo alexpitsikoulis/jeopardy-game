@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jeopardy</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <h1>Jeopardy!</h1>
     </header>
-    <div class="welcomeScreen">
+    <div class="welcome-screen">
         <h2>Welcome to Jeopardy</h2>
+        <h3>Let's Get Started</h3>
+        <p>What's Your Name?</p>
+        <input type="text" id="player-name-input"> <br>
+        <button id="start-button" class="btn btn-success">Start</button>
     </div>
     <footer>
-        <p>Player:<span id="player-name"> Alex</span> ||  Score:<span id="player-score">0</span></p>
+        <p>Player:<span id="player-name-display"> Alex</span> ||  Score:<span id="player-score-display">0</span></p>
     </footer>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/main.js"></script>
