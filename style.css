@@ -71,7 +71,7 @@ h3 {
         background: radial-gradient(blue, blue, black);
         color: white;
     }
-        .round-one-game-board-live p {
+        .round-one-game-board-live div p {
             margin: 15% auto;
         }
     .round-one-game-board-live .category {
