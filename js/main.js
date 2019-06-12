@@ -145,12 +145,6 @@ const questions = {
                 answer: "answer",
                 points: 500
             }
-        },
-        finalQuestion: {
-            categoryName: "Final Question",
-            question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
-            answer: "answer",
-            points: 1000
         }
     },
     roundTwo: {
@@ -293,12 +287,6 @@ const questions = {
                 answer: "answer",
                 points: 1000
             }
-        },
-        finalQuestion: {
-            categoryName: "Final Question",
-            question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
-            answer: "answer",
-            points: 1000
         }
     }
 }
@@ -310,6 +298,9 @@ $('#start-button').on('click', function() {
         $('#player-score-display').html(player.score)
         $('.welcome-screen').fadeOut(100)
         $('.round-one-game-board').addClass('round-one-game-board-live').removeClass('round-one-game-board')
+        for (let i = 100; i <= 500; i += 100) {
+            buildRow("roundOne", i)
+        }
         giveRoundOneGameBoardValues()
     } else {
         alert('Please enter your name')
@@ -318,17 +309,25 @@ $('#start-button').on('click', function() {
 
 //function that populates round one with the data from the questions object
 function giveRoundOneGameBoardValues() {
-
     let counter = 0
     for (category in questions.roundOne) {
         let currentCategory = questions.roundOne[category]
-        console.log(currentCategory.categoryName)
         let categoryField = document.querySelectorAll('.round-one.category')[counter]
         categoryField.innerHTML = currentCategory.categoryName
-        console.log(categoryField)
+        console.log(currentCategory.question100.question)
         counter ++
     }
 }
-$('.game-board div.question').on('click', function() {
-    alert('clicked')
-})
+//function that builds each row in the game board grid
+function buildRow(roundNumber, points) {
+    for (category in questions[roundNumber]) {
+            let questionObject = questions[roundNumber][category][`question${points}`]
+            let $div = $('<div></div>')
+            $div.text(questionObject.points)
+            $div.addClass(`${category} question`)
+            $div.on('click', function() {
+                alert(event.target)
+            })
+            $('.game-board').append($div)
+    }
+}
