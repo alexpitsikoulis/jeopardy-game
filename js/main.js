@@ -10,7 +10,7 @@ $('#start-button').on('click', function() {
         $('#player-name-display').html(player.name)
         $('#player-score-display').html(player.score)
         $('.welcome-screen').fadeOut(100)
-        $('.roundOneGameBoard').addClass('roundOneGameBoardLive').removeClass('roundOneGameBoard')
+        $('.round-one-game-board').addClass('round-one-game-board-live').removeClass('round-one-game-board')
     } else {
         alert('Please enter your name')
     }
