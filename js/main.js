@@ -1,8 +1,10 @@
-$('#start-button').on('click', function() {
-    console.log('clicked!')
-    $('.welcome-screen').fadeOut(100)
-})
+//object that holds player name and score
 const player = {
     name: null,
     score: 0
 }
+//event listener on start button that saves player name hides welcome screen and shows game board
+$('#start-button').on('click', function() {
+    $('.welcome-screen').fadeOut(100)
+    player.name = $('#player-name-input').val()
+})
