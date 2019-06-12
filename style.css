@@ -36,6 +36,9 @@ h3 {
     justify-content: space-around;
     align-items: center
 }
+    .welcome-screen h2 {
+        margin-top: 12vh;
+    }
     .welcome-screen p {
         font-size: 1.5em;
     }
@@ -44,7 +47,7 @@ h3 {
         padding: 5px;
     }
     .welcome-screen button {
-        margin-bottom: 10vh;
+        margin-bottom: 15vh;
         height: 7vh;
         width: 12vw;
         font-size: 3vh;
