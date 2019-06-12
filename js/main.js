@@ -7,7 +7,7 @@ const player = {
 const questions = {
     roundOne: {
         category1: {
-            categoryName: "Category",
+            categoryName: "Geography",
             question100: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
@@ -35,7 +35,7 @@ const questions = {
             }
         },
         category2: {
-            categoryName: "Category",
+            categoryName: "Who Said It?",
             question100: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
@@ -63,7 +63,7 @@ const questions = {
             }
         },
         category3: {
-            categoryName: "Category",
+            categoryName: "Web Development",
             question100: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
@@ -91,7 +91,7 @@ const questions = {
             }
         },
         category4: {
-            categoryName: "Category",
+            categoryName: "Classic Literature",
             question100: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
@@ -119,7 +119,7 @@ const questions = {
             }
         },
         category5: {
-            categoryName: "Category",
+            categoryName: "The Periodic Table",
             question100: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
@@ -147,6 +147,7 @@ const questions = {
             }
         },
         finalQuestion: {
+            categoryName: "Final Question",
             question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
             answer: "answer",
             points: 1000
@@ -294,6 +295,7 @@ const questions = {
             }
         },
         finalQuestion: {
+            categoryName: "Final Question",
             question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
             answer: "answer",
             points: 1000
@@ -317,11 +319,14 @@ $('#start-button').on('click', function() {
 //function that populates round one with the data from the questions object
 function giveRoundOneGameBoardValues() {
 
-    let counter = 1
+    let counter = 0
     for (category in questions.roundOne) {
-        counter ++
         let currentCategory = questions.roundOne[category]
         console.log(currentCategory.categoryName)
+        let categoryField = document.querySelectorAll('.round-one.category')[counter]
+        categoryField.innerHTML = currentCategory.categoryName
+        console.log(categoryField)
+        counter ++
     }
 }
 $('.game-board div.question').on('click', function() {
