@@ -7,6 +7,7 @@ const player = {
 const questions = {
     roundOne: {
         category1: {
+            categoryName: "Category",
             question100: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
@@ -34,6 +35,7 @@ const questions = {
             }
         },
         category2: {
+            categoryName: "Category",
             question100: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
@@ -61,6 +63,7 @@ const questions = {
             }
         },
         category3: {
+            categoryName: "Category",
             question100: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
@@ -88,6 +91,7 @@ const questions = {
             }
         },
         category4: {
+            categoryName: "Category",
             question100: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
@@ -115,6 +119,7 @@ const questions = {
             }
         },
         category5: {
+            categoryName: "Category",
             question100: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
@@ -149,6 +154,7 @@ const questions = {
     },
     roundTwo: {
         category1: {
+            categoryName: "Category",
             question200: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
@@ -176,6 +182,7 @@ const questions = {
             }
         },
         category2: {
+            categoryName: "Category",
             question200: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
@@ -203,6 +210,7 @@ const questions = {
             }
         },
         category3: {
+            categoryName: "Category",
             question200: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
@@ -230,6 +238,7 @@ const questions = {
             }
         },
         category4: {
+            categoryName: "Category",
             question200: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
@@ -257,6 +266,7 @@ const questions = {
             }
         },
         category5: {
+            categoryName: "Category",
             question200: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
@@ -290,7 +300,7 @@ const questions = {
         }
     }
 }
-//event listener on start button that saves player name hides welcome screen and shows game board
+//event listener on start button that saves player name hides welcome screen and shows round one game board
 $('#start-button').on('click', function() {
     if(document.querySelector('#player-name-input').value !== "") {
         player.name = $('#player-name-input').val()
@@ -298,10 +308,22 @@ $('#start-button').on('click', function() {
         $('#player-score-display').html(player.score)
         $('.welcome-screen').fadeOut(100)
         $('.round-one-game-board').addClass('round-one-game-board-live').removeClass('round-one-game-board')
+        giveRoundOneGameBoardValues()
     } else {
         alert('Please enter your name')
     }
 })
+
+//function that populates round one with the data from the questions object
+function giveRoundOneGameBoardValues() {
+
+    let counter = 1
+    for (category in questions.roundOne) {
+        counter ++
+        let currentCategory = questions.roundOne[category]
+        console.log(currentCategory.categoryName)
+    }
+}
 $('.game-board div.question').on('click', function() {
     alert('clicked')
 })
