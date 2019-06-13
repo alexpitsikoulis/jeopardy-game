@@ -179,27 +179,32 @@ const questions = {
             question200: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 200
+                points: 200,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question400: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 400
+                points: 400,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question600: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 600
+                points: 600,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question800: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 800
+                points: 800,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question1000: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 1000
+                points: 1000,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             }
         },
         category2: {
@@ -207,27 +212,32 @@ const questions = {
             question200: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 200
+                points: 200,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question400: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 400
+                points: 400,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question600: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 600
+                points: 600,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question800: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 800
+                points: 800,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question1000: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 1000
+                points: 1000,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             }
         },
         category3: {
@@ -235,27 +245,32 @@ const questions = {
             question200: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 200
+                points: 200,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question400: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 400
+                points: 400,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question600: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 600
+                points: 600,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question800: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 800
+                points: 800,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question1000: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 1000
+                points: 1000,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             }
         },
         category4: {
@@ -263,27 +278,32 @@ const questions = {
             question200: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 200
+                points: 200,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question400: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 400
+                points: 400,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question600: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 600
+                points: 600,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question800: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 800
+                points: 800,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question1000: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 1000
+                points: 1000,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             }
         },
         category5: {
@@ -291,27 +311,32 @@ const questions = {
             question200: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 200
+                points: 200,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question400: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 400
+                points: 400,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question600: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 600
+                points: 600,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question800: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 800
+                points: 800,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             },
             question1000: {
                 question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
                 answer: "answer",
-                points: 1000
+                points: 1000,
+                choices: ["answer", "not answer", "not answer", "not answer"]
             }
         }
     }
@@ -332,9 +357,9 @@ const finalQuestion = {
 $('#start-button').on('click', function() {
     if(document.querySelector('#player-name-input').value !== "") {
         createPlayer()
-        $('.welcome-screen').fadeOut(100)
+        $('.welcome-screen').addClass('hidden')
         $('.game-board').toggleClass('game-board-live')
-        createBoard('roundOne')
+        createBoard('roundOne', 100)
     } else {
         alert('Please enter your name')
     }
@@ -347,17 +372,6 @@ function createPlayer() {
     $('#player-score-display').html(player.score)
 }
 
-//function that populates round one with the data from the questions object
-function giveRoundOneGameBoardValues() {
-    let counter = 0
-    for (category in questions.roundOne) {
-        let currentCategory = questions.roundOne[category]
-        let categoryField = document.querySelectorAll('.game-board .category')[counter]
-        categoryField.innerHTML = currentCategory.categoryName
-        console.log(currentCategory.question100.question)
-        counter ++
-    }
-}
 //function that makes the row indicating the categories for the round
 function buildCategoryRow(roundNumber) {
     for (category in questions[roundNumber]) {
@@ -377,18 +391,30 @@ function buildRow(roundNumber, points) {
             $div.html(`<p>${questionObject.points}</p>`)
             $div.addClass(`${category} question`)
             $div.on('click', function() {
-                if(prompt(`${questionObject.question} \n 
-                1.${questionObject.choices[0]} \n
-                2.${questionObject.choices[1]} \n 
-                3.${questionObject.choices[2]} \n
-                4.${questionObject.choices[3]}`) == questionObject.choices.indexOf(questionObject.answer) + 1) {
-                    player.score += questionObject.points
-                    $('#player-score-display').html(player.score)
-                } else {
-                    alert('Sorry, that is incorrect')
-                }
+                let questionScreen = $('.question-screen')
+                questionScreen.html(`<h2>${questionObject.question}</h2> \n <h6>What is...</h6>`)
+                let $choicesDiv = $('<div class="choices"></div>')
+                questionScreen.append($choicesDiv)
+                questionObject.choices.forEach((choice) => {
+                    let $choice = $(`<div>${choice}</div>`)
+                    $choicesDiv.append($choice)
+                    $choice.on('click', function() {
+                        if (choice == questionObject.answer) {
+                            alert(`That is correct! ${questionObject.points} points have been added to your total`)
+                            player.score += questionObject.points
+                            $('#player-score-display').html(player.score)
+                        } else {
+                            alert('That is incorrect')
+                        }
+                        questionScreen.addClass('hidden')
+                        $('.game-board').removeClass('hidden')
+                    })
+                })
+                $('.game-board').addClass('hidden')
+                questionScreen.removeClass('hidden')
                 $div.css('z-index', -1)
-                
+                player.questionsAnswered ++
+                revealFinalQuestion('roundOne')
             })
             $('.game-board').append($div)
     }
@@ -399,15 +425,31 @@ function makeFinalQuestionCell(roundNumber) {
     let $final = $('<div class="final"></div>')
     $final.text("Final Question")
     $final.on('click', function() {
-        alert(finalQuestionObject.points)
+        if (prompt(finalQuestionObject.question) === finalQuestionObject.answer) {
+            alert(`That is correct! ${finalQuestionObject.points} points have been added to your total`)
+            player.score += finalQuestionObject.points
+            $('#player-score-display').html(player.score)
+        } else {
+            alert("Sorry, that is incorrect")
+        }
+        $('.game-board').empty()
+        createBoard('roundTwo', 200)
     })
     $('.game-board').append($final)
 }
 // function that creates game board
-function createBoard(roundNumber) {
+function createBoard(roundNumber, minPoints) {
     buildCategoryRow(roundNumber)
-        for (let i = 100; i <= 500; i += 100) {
+        for (let i = minPoints; i <= (minPoints * 5); i += minPoints) {
             buildRow(roundNumber, i)
         }
         makeFinalQuestionCell(roundNumber)
+}
+
+//function that reveals the final question
+function revealFinalQuestion(roundNumber) {
+    if (player.questionsAnswered === 25) {
+        // alert("It's time for the final question") 
+        $('.final').css('z-index', 1)
+    }
 }
