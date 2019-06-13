@@ -290,6 +290,18 @@ const questions = {
         }
     }
 }
+const finalQuestion = {
+    roundOne: {
+        question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
+        answer: "answer",
+        points: 1000
+    },
+    roundTwo: {
+        question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ut.",
+        answer: "answer",
+        points: 2000
+    }
+}
 //event listener on start button that saves player name hides welcome screen and shows round one game board
 $('#start-button').on('click', function() {
     if(document.querySelector('#player-name-input').value !== "") {
@@ -344,7 +356,7 @@ function buildRow(roundNumber, points) {
 //function that creates the cell for the final question for each round
 function makeFinalQuestionCell(roundNumber) {
     let $final = $('<div class="final"></div>')
-    
+
 }
 // function that creates game board
 // function createBoard() {
