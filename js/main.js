@@ -414,7 +414,7 @@ function buildRow(roundNumber, points) {
                 questionScreen.removeClass('hidden')
                 $div.css('z-index', -1)
                 player.questionsAnswered ++
-                revealFinalQuestion('roundOne')
+                revealFinalQuestion(1)
             })
             $('.game-board').append($div)
     }
@@ -432,8 +432,13 @@ function makeFinalQuestionCell(roundNumber) {
         } else {
             alert("Sorry, that is incorrect")
         }
+        player.questionsAnswered ++
         $('.game-board').empty()
-        createBoard('roundTwo', 200)
+        if (player.questionsAnswered === 26) {
+            createBoard('roundTwo', 200)
+        } else if (player.questionsAnswered === 52) {
+            $('.game-board').addClass('hidden')
+        }
     })
     $('.game-board').append($final)
 }
@@ -447,9 +452,9 @@ function createBoard(roundNumber, minPoints) {
 }
 
 //function that reveals the final question
-function revealFinalQuestion(roundNumber) {
-    if (player.questionsAnswered === 25) {
+function revealFinalQuestion() {
+    if (player.questionsAnswered === 25 || player.questionsAnswered === 51) {
         // alert("It's time for the final question") 
         $('.final').css('z-index', 1)
-    }
+    } 
 }
