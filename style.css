@@ -69,9 +69,12 @@ h3 {
         margin: .1vw;
         background: radial-gradient(blue, blue, black);
         color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
         .game-board-live div p {
-            margin: 15% auto;
+            justify-self: center;
         }
     .game-board-live .category {
         color: black;
