@@ -297,11 +297,12 @@ $('#start-button').on('click', function() {
         $('#player-name-display').html(player.name)
         $('#player-score-display').html(player.score)
         $('.welcome-screen').fadeOut(100)
-        $('.round-one-game-board').addClass('round-one-game-board-live').removeClass('round-one-game-board')
+        $('.game-board').toggleClass('game-board-live')
+        buildCategoryRow('roundOne')
         for (let i = 100; i <= 500; i += 100) {
             buildRow("roundOne", i)
         }
-        giveRoundOneGameBoardValues()
+        // giveRoundOneGameBoardValues()
     } else {
         alert('Please enter your name')
     }
@@ -312,13 +313,22 @@ function giveRoundOneGameBoardValues() {
     let counter = 0
     for (category in questions.roundOne) {
         let currentCategory = questions.roundOne[category]
-        let categoryField = document.querySelectorAll('.round-one.category')[counter]
+        let categoryField = document.querySelectorAll('.game-board .category')[counter]
         categoryField.innerHTML = currentCategory.categoryName
         console.log(currentCategory.question100.question)
         counter ++
     }
 }
-//function that builds each row in the game board grid
+//function that makes the row indicating the categories for the round
+function buildCategoryRow(roundNumber) {
+    for (category in questions[roundNumber]) {
+        let categoriesObject = questions[roundNumber][category]
+        let $div = $('<div class="category"></div>')
+        $div.text(categoriesObject.categoryName)
+        $('.game-board').append($div)
+    }
+}
+// function that builds each row in the game board grid
 function buildRow(roundNumber, points) {
     for (category in questions[roundNumber]) {
             let questionObject = questions[roundNumber][category][`question${points}`]
@@ -326,8 +336,20 @@ function buildRow(roundNumber, points) {
             $div.text(questionObject.points)
             $div.addClass(`${category} question`)
             $div.on('click', function() {
-                alert(event.target)
+                alert(questionObject.points)
             })
             $('.game-board').append($div)
     }
 }
+//function that creates the cell for the final question for each round
+function makeFinalQuestionCell(roundNumber) {
+    let $final = $('<div class="final"></div>')
+    
+}
+// function that creates game board
+// function createBoard() {
+//     let $board = $('<div class="game-board"></div>')
+//     $('.welcome-screen').after(<p>test</p>)
+// }
+
+buildCategoryRow()
