@@ -295,7 +295,7 @@ const questions = {
             },
             question800: {
                 question: "The father of this wrestler was the NWA World Light Heavyweight champion in 1960 and 1963",
-                answer: "answer",
+                answer: "Chavo Guerrerro Sr.",
                 points: 800,
                 choices: ["Chavo Guerrerro Sr.", "Chavo Guerrerro Jr.", "Jake \"The Snake\" Roberts", "Dusty Rhodes"]
             },
@@ -438,20 +438,29 @@ function makeFinalQuestionCell(roundNumber) {
     let $final = $('<div class="final"></div>')
     $final.text("Final Question")
     $final.on('click', function() {
-        if (prompt(finalQuestionObject.question) === finalQuestionObject.answer) {
-            alert(`That is correct! ${finalQuestionObject.points} points have been added to your total`)
-            player.score += finalQuestionObject.points
-            $('#player-score-display').html(player.score)
-        } else {
-            alert("Sorry, that is incorrect")
-        }
-        player.questionsAnswered ++
-        $('.game-board').empty()
-        if (player.questionsAnswered === 26) {
-            createBoard('roundTwo', 200)
-        } else if (player.questionsAnswered === 52) {
-            $('.game-board').addClass('hidden')
-        }
+        let questionScreen = $('.question-screen')
+        questionScreen.html(`<h2>${finalQuestionObject.question}</h2> \n <h6>What is...</h6> \n <input class="final-input"> <button class="final-submit btn btn-success"></button>`)
+        $('.final-submit').on('click', function() {
+            let input = document.querySelector('.final-input').value.toLowerCase()
+            if (input == finalQuestionObject.answer.toLowerCase()) {
+                alert(`That is correct! ${finalQuestionObject.points} points have been added to your total`)
+                player.score += finalQuestionObject.points
+                $('#player-score-display').html(player.score)
+            } else {
+                alert('Sorry, that is incorrect')
+            }
+            player.questionsAnswered ++
+            questionScreen.addClass('hidden')
+            $('.game-board').removeClass('hidden')
+            $('.game-board').empty()
+            if (player.questionsAnswered === 26) {
+                createBoard('roundTwo', 200)
+            } else if (player.questionsAnswered === 52) {
+                $('.game-board').addClass('hidden')
+            }
+        })
+        $('.game-board').addClass('hidden')
+        questionScreen.removeClass('hidden')
     })
     $('.game-board').append($final)
 }
