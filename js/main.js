@@ -407,17 +407,23 @@ const finalQuestion = {
         points: 2000
     }
 }
-//event listener on start button that saves player name hides welcome screen and creates the game board
-$('#start-button').on('click', function() {
-    if(document.querySelector('#player-name-input').value !== "") {
-        createPlayer()
-        $('.welcome-screen').addClass('hidden')
-        $('.game-board').removeClass('hidden')
-        createBoard('roundOne', 100)
-    } else {
-        swal.fire({type: 'error', text: 'Please enter your name'})
-    }
-})
+
+//create welcome screen
+function createWelcomeScreen() {
+    let $welcome = $(`<div class="welcome-screen"><h1>Welcome to Jeopardy</h1> <h3>Let's Get Started</h3> <p>What's Your Name?</p> <input type="text" id="player-name-input" placeholder="Your Name">
+    <button id="start-button" class="btn btn-success">Start</button></div>`)
+    $('header').after($welcome)
+    $('#start-button').on('click', function() {
+        if(document.querySelector('#player-name-input').value !== "") {
+            createPlayer()
+            $welcome.addClass('hidden')
+            $('.game-board').removeClass('hidden')
+            createBoard('roundOne', 100)
+        } else {
+            swal.fire({type: 'error', text: 'Please enter your name'})
+        }
+    })
+}
 
 //function that stores player name and starts point count
 function createPlayer() {
@@ -519,6 +525,11 @@ function makeFinalQuestionCell(roundNumber) {
 }
 // function that creates game board
 function createBoard(roundNumber, minPoints) {
+    if (player.questionsAnswered === 0) {
+        let $gameBoard = $('<div class="game-board hidden"></div>')
+        $('.welcome-screen').after($gameBoard)
+    }
+    $('.game-board').removeClass('hidden')
     buildCategoryRow(roundNumber)
         for (let i = minPoints; i <= (minPoints * 5); i += minPoints) {
             buildRow(roundNumber, i)
@@ -532,6 +543,7 @@ function revealFinalQuestion() {
         $('.final').css('z-index', 1)
     } 
 }
+
 //function that shuffles the contents of an array (from: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
 function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
@@ -544,3 +556,5 @@ function shuffle(array) {
     }
     return array;
 }
+
+createWelcomeScreen()
