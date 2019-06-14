@@ -4,6 +4,7 @@ const player = {
     score: 0,
     questionsAnswered: 0
 }
+// wind condition (just under 60% of total possible points)
 let pointsNeededToWin = 17000
 //object that stores questions, their answers, and their point values
 const questions = {
@@ -219,7 +220,7 @@ const questions = {
             question600: {
                 question: "In this 1957 Swedish film Max van Sydow's character plays a game of chess with Death",
                 whatorWho: "What",
-                answer: "The Sevent Seal",
+                answer: "The Seventh Seal",
                 points: 600,
                 choices: ["The Seventh Seal", "Wild Strawberries", "The New Land", "You, The Living"]
             },
@@ -411,10 +412,10 @@ $('#start-button').on('click', function() {
     if(document.querySelector('#player-name-input').value !== "") {
         createPlayer()
         $('.welcome-screen').addClass('hidden')
-        $('.game-board').toggleClass('game-board-live')
+        $('.game-board').removeClass('hidden')
         createBoard('roundOne', 100)
     } else {
-        alert('Please enter your name')
+        swal.fire({type: 'error', text: 'Please enter your name'})
     }
 })
 
@@ -445,42 +446,34 @@ function buildRow(roundNumber, points) {
             $div.addClass(`${category} question`)
             $div.on('click', function() {
                 let questionScreen = $('.question-screen')
-                questionScreen.html(`<h2>${questionObject.question}</h2> \n <h6>${questionObject.whatorWho} is...</h6>`)
+                questionScreen.html(`<h2>${questionObject.question}</h2> \n <p>${questionObject.whatorWho} is...</p>`)
                 let $choicesDiv = $('<div class="choices"></div>')
                 questionScreen.append($choicesDiv)
-                //function that shuffles the contents of an array (from: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
-                function shuffle(array) {
-                    var currentIndex = array.length, temporaryValue, randomIndex;
-                    while (0 !== currentIndex) {
-                      randomIndex = Math.floor(Math.random() * currentIndex);
-                      currentIndex -= 1;
-                      temporaryValue = array[currentIndex];
-                      array[currentIndex] = array[randomIndex];
-                      array[randomIndex] = temporaryValue;
-                    }
-                    return array;
-                }
                 //running the shuffle function on the array of choices so the order of the answer buttons is randomized each time
                 shuffle(questionObject.choices).forEach((choice) => {
-                    let $choice = $(`<div>${choice}</div>`)
+                    let $choice = $(`<button>${choice}</button>`)
                     $choicesDiv.append($choice)
                     $choice.on('click', function() {
                         if (choice == questionObject.answer) {
-                            alert(`That is correct! ${questionObject.points} points have been added to your total`)
+                            swal.fire({type: 'success', text: `That is correct! ${questionObject.points} points have been added to your total`})
                             player.score += questionObject.points
                             $('#player-score-display').html(player.score)
                         } else {
-                            alert('That is incorrect')
+                            swal.fire({type: 'error', text: 'That is incorrect'})
                         }
                         questionScreen.addClass('hidden')
                         $('.game-board').removeClass('hidden')
+                        if (player.questionsAnswered === 25 || player.questionsAnswered === 51) {
+                            setTimeout(function() { swal.fire("It's time for the final question!")}, 1500)
+                        }
                     })
                 })
                 $('.game-board').addClass('hidden')
                 questionScreen.removeClass('hidden')
                 $div.css('z-index', -1)
                 player.questionsAnswered ++
-                revealFinalQuestion(1)
+                if (player.questionsAnswered === 25 || player.questionsAnswered === 51)
+                revealFinalQuestion()
             })
             $('.game-board').append($div)
     }
@@ -492,15 +485,15 @@ function makeFinalQuestionCell(roundNumber) {
     $final.text("Final Question")
     $final.on('click', function() {
         let questionScreen = $('.question-screen')
-        questionScreen.html(`<h2>${finalQuestionObject.question}</h2> \n <h6>${finalQuestionObject.whatorWho}...</h6> \n <input class="final-input"> <button class="final-submit btn btn-success"></button>`)
+        questionScreen.html(`<h2>${finalQuestionObject.question}</h2> \n <p>${finalQuestionObject.whatorWho} is...</p> \n <input class="final-input"> <button class="final-submit btn btn-success">Submit</button>`)
         $('.final-submit').on('click', function() {
             let input = document.querySelector('.final-input').value.toLowerCase()
             if (input == finalQuestionObject.answer.toLowerCase()) {
-                alert(`That is correct! ${finalQuestionObject.points} points have been added to your total`)
+                swal.fire({type: 'success', text: `That is correct! ${finalQuestionObject.points} points have been added to your total`})
                 player.score += finalQuestionObject.points
                 $('#player-score-display').html(player.score)
             } else {
-                alert('Sorry, that is incorrect')
+                swal.fire({type: 'error', text: 'Sorry, that is incorrect'})
             }
             player.questionsAnswered ++
             questionScreen.addClass('hidden')
@@ -512,9 +505,9 @@ function makeFinalQuestionCell(roundNumber) {
                 $('.game-board').addClass('hidden')
                 let winLoseScreen = $('.win-lose')
                 if (player.score >= pointsNeededToWin) {
-                    winLoseScreen.html(`<h2>WINNER!</h2> \n <h3>Congratulations ${player.name}! You have won $${player.score}.</h3> \n <button class="play-again btn btn-success" onClick="window.location.reload()">Play Again?</button>`)
+                    winLoseScreen.html(`<div class="win-lose-image"><img class="alex" src="images/jp_s33_cast_alex_0.jpg" alt="alex trebek"></div><div class="win-lose-message"><h2>WINNER!</h2> \n <h3>Congratulations ${player.name}! You have won $${player.score}.</h3> \n <button class="play-again btn btn-success" onClick="window.location.reload()">Play Again?</button></div>`)
                 } else {
-                    winLoseScreen.html(`<h2>Not a Winner</h2> \n <h3>Sorry ${player.name}, you didn't score enough points</h3> \n <button class="play-again btn btn-success" onClick="window.location.reload()">Play Again</button>`)
+                    winLoseScreen.html(`<div class="win-lost-image"><img class="alex" src="images/jp_s33_cast_alex_0.jpg" alt="alex trebek"></div><div class="win-lose-message"><h2>Not a Winner</h2> \n <h3>Sorry ${player.name}, you didn't score enough points</h3> \n <button class="play-again btn btn-success" onClick="window.location.reload()">Play Again</button></div>`)
                 }
                 winLoseScreen.removeClass('hidden')
             }
@@ -536,7 +529,18 @@ function createBoard(roundNumber, minPoints) {
 //function that reveals the final question
 function revealFinalQuestion() {
     if (player.questionsAnswered === 25 || player.questionsAnswered === 51) {
-        // alert("It's time for the final question") 
         $('.final').css('z-index', 1)
     } 
+}
+//function that shuffles the contents of an array (from: https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
 }

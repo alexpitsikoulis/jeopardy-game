@@ -5,29 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jeopardy</title>
+    <link href="https://fonts.googleapis.com/css?family=Sigmar+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Jeopardy!</h1>
+        <img src="images/jeopardy-png-was-anyone-really-getting-excited-to-do-math-or-was-it-all-about-winning-600.png" alt="jeopardy logo">
     </header>
     <!-- welcome screen shown on page load -->
     <div class="welcome-screen">
-        <h2>Welcome to Jeopardy</h2>
+        <h1>Welcome to Jeopardy</h1>
         <h3>Let's Get Started</h3>
         <p>What's Your Name?</p>
         <input type="text" id="player-name-input" placeholder="Your Name">
         <button id="start-button" class="btn btn-success">Start</button>
     </div>
     <!-- div that holds the game board grid -->
-    <div class="game-board"></div>
+    <div class="game-board hidden"></div>
     <!-- div that shows each question and has answer inputs -->
     <div class="question-screen hidden"></div>
+    <!-- div that displays whether or not the player won -->
     <div class="win-lose hidden"></div>
     <footer>
         <p>Player:<span id="player-name-display"></span> ||  Score:<span id="player-score-display"></span></p>
     </footer>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.12.1/dist/sweetalert2.all.min.js"></script>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/main.js"></script>
 </body>
