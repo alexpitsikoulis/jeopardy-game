@@ -78,14 +78,20 @@ p {
 }
     .game-board div {
         margin: .1vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .game-board button {
+        margin: .1vw;
         background: radial-gradient(blue, blue, black);
         color: white;
         display: flex;
         justify-content: center;
         align-items: center;
+        border: none;
     }
     .game-board .category {
-        color: black;
         background: white;
     }
     .game-board .final {

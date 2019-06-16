@@ -445,12 +445,10 @@ function buildCategoryRow(roundNumber) {
 function buildRow(roundNumber, points) {
     for (category in questions[roundNumber]) {
             let questionObject = questions[roundNumber][category][`question${points}`]
-            let $div = $('<div></div>')
-            let $answered = $('<div class="answered"></div>')
-            $answered.css('z-index', 2)
-            $div.html(`<p>${questionObject.points}</p>`)
-            $div.addClass(`${category} question`)
-            $div.on('click', function() {
+            let $button = $('<button></button>')
+            $button.html(`<p>${questionObject.points}</p>`)
+            $button.addClass(`${category} question`)
+            $button.on('click', function() {
                 let questionScreen = $('.question-screen')
                 questionScreen.html(`<h2>${questionObject.question}</h2> \n <p>${questionObject.whatorWho} is...</p>`)
                 let $choicesDiv = $('<div class="choices"></div>')
@@ -476,18 +474,18 @@ function buildRow(roundNumber, points) {
                 })
                 $('.game-board').addClass('hidden')
                 questionScreen.removeClass('hidden')
-                $div.css('z-index', -1)
+                $button.css('z-index', -1)
                 player.questionsAnswered ++
                 if (player.questionsAnswered === 25 || player.questionsAnswered === 51)
                 revealFinalQuestion()
             })
-            $('.game-board').append($div)
+            $('.game-board').append($button)
     }
 }
 //function that creates the cell for the final question for each round
 function makeFinalQuestionCell(roundNumber) {
     let finalQuestionObject = finalQuestion[roundNumber]
-    let $final = $('<div class="final"></div>')
+    let $final = $('<button class="final"></button>')
     $final.text("Final Question")
     $final.on('click', function() {
         let questionScreen = $('.question-screen')
