@@ -92,9 +92,6 @@ p {
         grid-column: 1 / span 5;
         z-index: -1;
     }
-.answered {
-    background: black;
-}
 .question-screen {
     background: wheat;
     margin: 0 auto;
