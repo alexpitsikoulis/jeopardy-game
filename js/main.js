@@ -4,8 +4,8 @@ const player = {
     score: 0,
     questionsAnswered: 0
 }
-// wind condition (just under 60% of total possible points)
-let pointsNeededToWin = 17000
+// wind condition (70% of total possible points)
+let pointsNeededToWin = 17850
 //object that stores questions, their answers, and their point values
 const questions = {
     roundOne: {
