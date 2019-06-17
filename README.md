@@ -8,6 +8,6 @@
 ![wireframe-3](./images/wireframe3.jpg)
 ![wireframe-4](./images/wireframe4.jpg)
 
-###### Citation:
+##### Citation:
 ###### function shuffle():
 [Stack Overflow thred where I found this function](https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array)
