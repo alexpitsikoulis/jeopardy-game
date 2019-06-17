@@ -3,4 +3,4 @@
 
 (http://alex-pitsikoulis-jeopardy-game.netlify.com/ "My Deployed Game")
 
-![wireframe-1](./images/wireframe1.jpg)
+![wireframe-1](./images/wireframe2.jpg)
