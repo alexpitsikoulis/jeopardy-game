@@ -4,8 +4,8 @@ const player = {
     score: 0,
     questionsAnswered: 0
 }
-// win condition (70% of total possible points)
-let pointsNeededToWin = 17850
+// win condition (60% of total possible points)
+let pointsNeededToWin = 15300
 //object that stores questions, their answers, and their point values
 const questions = {
     roundOne: {
