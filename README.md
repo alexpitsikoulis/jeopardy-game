@@ -3,6 +3,4 @@
 
 (http://alex-pitsikoulis-jeopardy-game.netlify.com/ "My Deployed Game")
 
-# Test
-## Test
-### Test
+![wireframe-1](images/wireframe1.jpg)
